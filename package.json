@@ -1,0 +1,97 @@
+{
+  "name": "git-message",
+  "displayName": "Git Message",
+  "description": "一键生成中英文 Commit Message",
+  "version": "1.0.0",
+  "publisher": "liumin",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
+  "keywords": [
+    "git",
+    "commit",
+    "message",
+    "ai",
+    "chinese"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Git Message",
+      "properties": {
+        "git-message.apiBaseUrl": {
+          "type": "string",
+          "default": "",
+          "description": "自定义 OpenAI 兼容 API 的 Base URL（留空则使用 VS Code 内置语言模型）",
+          "format": "uri"
+        },
+        "git-message.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "自定义 API 的 Key",
+          "format": "password"
+        },
+        "git-message.apiModel": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "description": "使用的模型名称（如 gpt-4o, gpt-4o-mini, deepseek-chat 等）"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "git-message.generateZhCN",
+        "title": "生成中文 Commit Message",
+        "icon": "$(comment-discussion-sparkle)"
+      },
+      {
+        "command": "git-message.generateEn",
+        "title": "生成英文 Commit Message",
+        "icon": "$(comment-discussion-sparkle)"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "git-message.generateZhCN",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        },
+        {
+          "command": "git-message.generateEn",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ],
+      "scm/sourceControl": [
+        {
+          "command": "git-message.generateZhCN",
+          "when": "scmProvider == git",
+          "group": "inline"
+        },
+        {
+          "command": "git-message.generateEn",
+          "when": "scmProvider == git",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
