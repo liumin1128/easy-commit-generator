@@ -1,7 +1,7 @@
 {
-  "name": "git-message",
-  "displayName": "Git Message",
-  "description": "一键生成中英文 Commit Message",
+  "name": "commit-message-generator",
+  "displayName": "Commit Message Generator",
+  "description": "AI 一键生成中英文 Commit Message",
   "version": "1.0.0",
   "publisher": "liumin",
   "license": "MIT",
@@ -23,21 +23,21 @@
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Git Message",
+      "title": "Commit Message Generator",
       "properties": {
-        "git-message.apiBaseUrl": {
+        "commitMessageGenerator.apiBaseUrl": {
           "type": "string",
           "default": "",
           "description": "自定义 OpenAI 兼容 API 的 Base URL（留空则使用 VS Code 内置语言模型）",
           "format": "uri"
         },
-        "git-message.apiKey": {
+        "commitMessageGenerator.apiKey": {
           "type": "string",
           "default": "",
           "description": "自定义 API 的 Key",
           "format": "password"
         },
-        "git-message.apiModel": {
+        "commitMessageGenerator.apiModel": {
           "type": "string",
           "default": "gpt-4o-mini",
           "description": "使用的模型名称（如 gpt-4o, gpt-4o-mini, deepseek-chat 等）"
@@ -46,12 +46,12 @@
     },
     "commands": [
       {
-        "command": "git-message.generateZhCN",
+        "command": "commitMessageGenerator.generateZhCN",
         "title": "生成中文 Commit Message",
         "icon": "$(comment-discussion-sparkle)"
       },
       {
-        "command": "git-message.generateEn",
+        "command": "commitMessageGenerator.generateEn",
         "title": "生成英文 Commit Message",
         "icon": "$(comment-discussion-sparkle)"
       }
@@ -59,24 +59,24 @@
     "menus": {
       "scm/title": [
         {
-          "command": "git-message.generateZhCN",
+          "command": "commitMessageGenerator.generateZhCN",
           "when": "scmProvider == git",
           "group": "navigation"
         },
         {
-          "command": "git-message.generateEn",
+          "command": "commitMessageGenerator.generateEn",
           "when": "scmProvider == git",
           "group": "navigation"
         }
       ],
       "scm/sourceControl": [
         {
-          "command": "git-message.generateZhCN",
+          "command": "commitMessageGenerator.generateZhCN",
           "when": "scmProvider == git",
           "group": "inline"
         },
         {
-          "command": "git-message.generateEn",
+          "command": "commitMessageGenerator.generateEn",
           "when": "scmProvider == git",
           "group": "inline"
         }

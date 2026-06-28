@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 注册：生成中文 Commit Message
   const cmdZhCN = vscode.commands.registerCommand(
-    "git-message.generateZhCN",
+    "commitMessageGenerator.generateZhCN",
     async () => {
       await generateCommitMessage(gitService, aiService, "zh-cn");
     },
@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 注册：生成英文 Commit Message
   const cmdEn = vscode.commands.registerCommand(
-    "git-message.generateEn",
+    "commitMessageGenerator.generateEn",
     async () => {
       await generateCommitMessage(gitService, aiService, "en");
     },
