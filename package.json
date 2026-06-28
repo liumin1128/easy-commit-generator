@@ -1,9 +1,9 @@
 {
-  "name": "commit-message-generator",
-  "displayName": "Commit Message Generator",
+  "name": "easy-commit-generator",
+  "displayName": "Easy Commit Generator",
   "description": "AI 一键生成中英文 Commit Message",
-  "version": "1.0.0",
-  "publisher": "liumin",
+  "version": "0.0.1",
+  "publisher": "EasyCommitGenerator",
   "license": "MIT",
   "engines": {
     "vscode": "^1.90.0"
