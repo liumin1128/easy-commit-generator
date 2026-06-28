@@ -1,4 +1,4 @@
-# Commit Message Generator
+# Easy Commit Generator
 
 在 VS Code 源代码管理（SCM）面板中，为 Git 暂存区变更一键生成中文或英文的 Commit Message。
 

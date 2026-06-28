@@ -23,21 +23,21 @@
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Commit Message Generator",
+      "title": "Easy Commit Generator",
       "properties": {
-        "commitMessageGenerator.apiBaseUrl": {
+        "easyCommitGenerator.apiBaseUrl": {
           "type": "string",
           "default": "",
           "description": "自定义 OpenAI 兼容 API 的 Base URL（留空则使用 VS Code 内置语言模型）",
           "format": "uri"
         },
-        "commitMessageGenerator.apiKey": {
+        "easyCommitGenerator.apiKey": {
           "type": "string",
           "default": "",
           "description": "自定义 API 的 Key",
           "format": "password"
         },
-        "commitMessageGenerator.apiModel": {
+        "easyCommitGenerator.apiModel": {
           "type": "string",
           "default": "gpt-4o-mini",
           "description": "使用的模型名称（如 gpt-4o, gpt-4o-mini, deepseek-chat 等）"
@@ -46,12 +46,12 @@
     },
     "commands": [
       {
-        "command": "commitMessageGenerator.generateZhCN",
+        "command": "easyCommitGenerator.generateZhCN",
         "title": "生成中文 Commit Message",
         "icon": "$(comment-discussion-sparkle)"
       },
       {
-        "command": "commitMessageGenerator.generateEn",
+        "command": "easyCommitGenerator.generateEn",
         "title": "生成英文 Commit Message",
         "icon": "$(comment-discussion-sparkle)"
       }
@@ -59,24 +59,24 @@
     "menus": {
       "scm/title": [
         {
-          "command": "commitMessageGenerator.generateZhCN",
+          "command": "easyCommitGenerator.generateZhCN",
           "when": "scmProvider == git",
           "group": "navigation"
         },
         {
-          "command": "commitMessageGenerator.generateEn",
+          "command": "easyCommitGenerator.generateEn",
           "when": "scmProvider == git",
           "group": "navigation"
         }
       ],
       "scm/sourceControl": [
         {
-          "command": "commitMessageGenerator.generateZhCN",
+          "command": "easyCommitGenerator.generateZhCN",
           "when": "scmProvider == git",
           "group": "inline"
         },
         {
-          "command": "commitMessageGenerator.generateEn",
+          "command": "easyCommitGenerator.generateEn",
           "when": "scmProvider == git",
           "group": "inline"
         }

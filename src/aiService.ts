@@ -17,7 +17,7 @@ export class AIService {
       return this.provider;
     }
 
-    const config = vscode.workspace.getConfiguration("commitMessageGenerator");
+    const config = vscode.workspace.getConfiguration("easyCommitGenerator");
     const baseUrl = config.get<string>("apiBaseUrl", "");
     const apiKey = config.get<string>("apiKey", "");
     const model = config.get<string>("apiModel", "gpt-4o-mini");
